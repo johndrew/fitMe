@@ -1,0 +1,22 @@
+{
+  "name": "fit-me",
+  "version": "1.0.0",
+  "description": "A webapp for connecting training professionals with clients.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johndrew/fitMe.git"
+  },
+  "author": "johndrew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johndrew/fitMe/issues"
+  },
+  "homepage": "https://github.com/johndrew/fitMe#readme",
+  "devDependencies": {
+    "serverless-single-page-app-plugin": "^1.0.2"
+  }
+}
