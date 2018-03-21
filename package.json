@@ -1,21 +1,21 @@
 {
   "name": "fit-me",
-  "version": "1.0.0",
-  "description": "A webapp for connecting training professionals with clients.",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "npm run deploy:serverless && npm run deploy:assets",
+    "deploy:serverless": "sls deploy",
+    "deploy:assets": "aws s3 sync build/ s3://johndrew-serverless-fit-me-client",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johndrew/fitMe.git"
-  },
-  "author": "johndrew",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/johndrew/fitMe/issues"
-  },
-  "homepage": "https://github.com/johndrew/fitMe#readme",
   "devDependencies": {
     "serverless-single-page-app-plugin": "^1.0.2"
   }
