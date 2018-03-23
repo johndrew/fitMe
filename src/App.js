@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import LoginScreen from './screens/LoginScreen';
 import './App.css';
+
+const loginScreen = () => {
+  return <LoginScreen />;
+};
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Fit Me</h1>
-        </header>
-      </div>
+      <BrowserRouter>
+          <div className="main">
+            <Route exact path="/" component={loginScreen}/>
+          </div>
+      </BrowserRouter>
     );
   }
 }

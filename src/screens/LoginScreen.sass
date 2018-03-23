@@ -1,0 +1,60 @@
+$fitMe-blue: #2BABEE
+$fitMe-font: #404040
+$medium: 640px
+$large: 1024px
+  
+.loginScreen__container
+  width: 300px
+  margin: 0px auto
+  text-align: center
+  padding: 15px 10px
+  @media (min-width: $medium)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 500px
+    min-height: 95%
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  @media (min-width: $large)
+    width: 900px
+
+// .loginScreen__container::before
+//   content: ""
+//   color: $fitMe-blue
+
+.loginScreen__header
+  color: $fitMe-font
+
+.textbox__input
+  color: $fitMe-font
+
+.textbox__container
+  position: relative
+  width: 80%
+  margin: 0px auto
+  margin-top: 10px
+
+.loginScreen__colorBlock
+
+.loginScreen__header
+  font-size: 2em
+  @media (min-width: $medium)
+    font-size: 3em
+  @media (min-width: $large)
+    font-size: 4.5em
+  
+.textbox__label
+  position: absolute
+  display: block
+  left: 5px
+  top: 10px
+
+.textbox__input
+  width: 100%
+  border: none
+  border-bottom: 2px $fitMe-blue solid
+  padding: 10px 10px 10px 5px
+  @media (min-width: $medium)
+    font-size: 1.5em
+  @media (min-width: $large)
+    font-size: 2em
