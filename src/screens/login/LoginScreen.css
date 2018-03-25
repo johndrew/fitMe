@@ -21,7 +21,7 @@
 .textbox__input {
   color: #404040; }
 
-.textbox__container {
+.loginScreen__loginForm {
   position: relative;
   width: 80%;
   margin: 0px auto;
@@ -45,7 +45,6 @@
 .textbox__input {
   width: 100%;
   border: none;
-  border-bottom: 2px #2BABEE solid;
   padding: 10px 10px 10px 5px; }
   @media (min-width: 640px) {
     .textbox__input {
