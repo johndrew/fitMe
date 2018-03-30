@@ -1,0 +1,14 @@
+.banner__container {
+  position: absolute;
+  top: 0px;
+  width: 100%; }
+
+.searchScreen__searchContainer {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 100%; }
+
+.searchScreen__searchOptions {
+  font-size: 14px;
+  margin-left: 10px; }

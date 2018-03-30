@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './LoginScreen.css';
+// Components
 import Textbox from '../../components/textbox/TextboxComponent';
 import Button from '../../components/button/ButtonComponent';
+
+// Styles
+import './LoginScreen.css';
 
 export default class LoginScreen extends React.Component {
   render() {

@@ -2,16 +2,13 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 
 import './Textbox.css';
-
-const Styles = Object.freeze({
-  fitMeBlue: '#2BABEE',
-});
+import { appStyles } from '../variables';
 
 export default class Textbox extends React.Component {
   render() {
     const placeholder = this.props.label || '';
     const underlineStyle = {
-      borderBottomColor: Styles.fitMeBlue,
+      borderBottomColor: appStyles.fitMeBlue,
     };
 
     return (

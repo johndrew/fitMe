@@ -4,8 +4,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
-import './App.css';
 
+import './App.css';
+import Paths from './paths';
+
+// Screens
 const loginScreen = () => {
   return <LoginScreen />;
 };
@@ -17,12 +20,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <MuiThemeProvider>
           <div className="main">
-            <MuiThemeProvider>
-              <Route exact path="/" component={loginScreen}/>
-              <Route path="/search" component={searchScreen}/>
-            </MuiThemeProvider>
+              <Route exact path={Paths.LOGIN} component={loginScreen}/>
+              <Route path={Paths.SEARCH} component={searchScreen}/>
           </div>
+        </MuiThemeProvider>
       </BrowserRouter>
     );
   }
