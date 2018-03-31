@@ -4,11 +4,13 @@
   width: 100%; }
 
 .searchScreen__searchContainer {
-  position: absolute;
-  top: 10%;
-  left: 10%;
   width: 100%; }
+  .searchScreen__searchContainer .button__container {
+    text-align: center; }
 
 .searchScreen__searchOptions {
   font-size: 14px;
   margin-left: 10px; }
+
+.searchScreen__searchResultsContainer {
+  margin-top: 20px; }

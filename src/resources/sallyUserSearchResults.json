@@ -1,0 +1,58 @@
+[
+  {
+    "id": "001",
+    "trainer": {
+      "id": "001",
+      "name": "Carly",
+      "image": "images/trainer-Carly.jpeg",
+      "classes": [
+        {
+          "id": "001",
+          "title": "Kettlebell",
+          "dayOfWeek": "Monday",
+          "startTime": "5:30PM",
+          "endTime": "6:00PM",
+          "location": {
+            "id": "001",
+            "name": "Powerbell Fitness",
+            "address": {
+              "addressLine1": "1234 Main St.",
+              "addressLine2": "",
+              "city": "Tampa",
+              "state": "Florida",
+              "zip": "33601"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "002",
+    "trainer": {
+      "id": "002",
+      "name": "Bill",
+      "image": "images/trainer-Bill.jpeg",
+      "classes": [
+        {
+          "id": "002",
+          "title": "Kettlebell",
+          "dayOfWeek": "Monday",
+          "startTime": "5:30PM",
+          "endTime": "6:00PM",
+          "location": {
+            "id": "002",
+            "name": "Rockin' Fitness",
+            "address": {
+              "addressLine1": "55 Rock St.",
+              "addressLine2": "",
+              "city": "Tampa",
+              "state": "Florida",
+              "zip": "33601"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
