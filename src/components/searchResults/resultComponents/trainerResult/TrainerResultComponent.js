@@ -4,7 +4,7 @@ import { GridTile } from 'material-ui/GridList';
 export default class TrainerResult extends React.Component {
   render() {
     const styles = {
-      width: '75%',
+      width: this.props.width,
       margin: '0px auto'
     };
 
@@ -14,7 +14,10 @@ export default class TrainerResult extends React.Component {
         key={this.props.id}
         title={this.props.name}
         titlePosition={'bottom'}
+        titleStyle={{ fontSize: this.props.titleFontSize }}
+        subtitle={<span>Matching Classes: <b>{this.props.classes.length}</b></span>}
         style={styles}
+        subtitleStyle={{ fontSize: this.props.subtitleFontSize }}
       >
         <img
           src={this.props.image}

@@ -39,6 +39,7 @@ export default class SearchScreen extends React.Component {
   }
 
   render() {
+    // TODO: add icon: icons/ic_search_black_24px.svg
     return (
       <div className="searchScreen__container">
         <Banner
@@ -60,7 +61,7 @@ export default class SearchScreen extends React.Component {
           /> */}
         </div>
         <div className="searchScreen__searchResultsContainer">
-          <SearchResults results={SallyUserSearchResults} />
+          <SearchResults results={[SallyUserSearchResults[0]]} />
         </div>
       </div>
     );
