@@ -54,7 +54,6 @@ export default class SearchScreen extends React.Component {
   }
 
   render() {
-    // TODO: add icon: icons/ic_search_black_24px.svg
     return (
       <div className="searchScreen__container">
         <Banner
