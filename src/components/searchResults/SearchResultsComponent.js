@@ -8,14 +8,6 @@ import TrainerResult from './resultComponents/trainerResult/TrainerResultCompone
 import { MediaQueries } from '../../utilities/variables';
 
 export default class SearchResults extends React.Component {
-  constructor(args) {
-    super(args);
-
-    this.state = {
-      displayedResults: this.props.results,
-    }
-  }
-
   renderResultByType(result, options = {}) {
     if (result.trainer) {
       return <TrainerResult
@@ -36,9 +28,65 @@ export default class SearchResults extends React.Component {
     return _.map(this.props.results, result => (this.renderResultByType(result, options)));
   }
 
+  get smallOptions() {
+    return {
+      cellHeight: 200,
+      numberOfColumns: 1,
+      tileWidth: '75%',
+      titleFontSize: '16px',
+      subtitleFontSize: '12px'
+    };
+  }
+
+  get mediumOptions() {
+    const mediumColumnNumber = _.min([this.props.results.length, 2]);
+    const gridWidth = mediumColumnNumber === 1 ? '65%' : '100%';
+
+    return {
+      cellHeight: 300,
+      numberOfColumns: mediumColumnNumber,
+      gridWidth,
+      tileWidth: '95%',
+      titleFontSize: '30px',
+      subtitleFontSize: '24px'
+    };
+  }
+
+  get largeOptions() {
+    const largeColumnNumber = _.min([this.props.results.length, 4]);
+    const cellHeight = (() => {
+      switch(largeColumnNumber) {
+        case 1:
+          return 500;
+        case 2:
+          return 500;
+        default:
+          return 400;
+      }
+    })();
+    const gridWidth = largeColumnNumber === 1 ? '65%' : '80%';
+    const tileWidth = (() => {
+      switch(largeColumnNumber) {
+        case 1:
+          return '65%';
+        case 2:
+          return '85%';
+        default:
+          return '95%';
+      }
+    })();
+
+    return {
+      cellHeight,
+      numberOfColumns: largeColumnNumber,
+      gridWidth,
+      tileWidth,
+      titleFontSize: '30px',
+      subtitleFontSize: '24px'
+    };
+  }
+
   render() {
-    // TODO: These styles were borrowed from http://www.material-ui.com/#/components/grid-list.
-    // Determine if they should stay.
     const styles = {
       root: {
         display: 'flex',
@@ -47,7 +95,8 @@ export default class SearchResults extends React.Component {
       },
       gridList: {
         height: 'auto',
-        overflowY: 'auto'
+        overflowY: 'auto',
+        margin: '0px auto'
       },
     };
     const renderGridList = ({
@@ -57,78 +106,33 @@ export default class SearchResults extends React.Component {
       titleFontSize,
       subtitleFontSize,
       gridWidth,
-    }) => (
-      <GridList
-        cellHeight={cellHeight}
-        style={Object.assign({}, styles.gridList, { width: gridWidth })}
-        cols={numberOfColumns}
-        padding={4}
-      >
-        {this.renderResults({ tileWidth, titleFontSize, subtitleFontSize })}
-      </GridList>
-    );
-    const smallOptions = {
-      cellHeight: 200,
-      numberOfColumns: 1,
-      tileWidth: '75%',
-      titleFontSize: '16px',
-      subtitleFontSize: '12px'
-    };
-    const mediumOptions = {
-      cellHeight: 300,
-      numberOfColumns: 2,
-      tileWidth: '95%',
-      titleFontSize: '30px',
-      subtitleFontSize: '24px'
-    };
-    const largeColumnNumber = 1;
-    // const largeColumnNumber = _.min(this.props.results.length, 4);
-    const largeOptions = {
-      cellHeight: (() => {
-        switch(largeColumnNumber) {
-          case 1:
-            return 300;
-          case 2:
-            return 300;
-          default:
-            return 300;
-        }
-      })(),
-      numberOfColumns: largeColumnNumber,
-      gridWidth: (() => {
-        switch(largeColumnNumber) {
-          case 1:
-            return '65%';
-          case 2:
-            return '100%';
-          default:
-            return '100%';
-        }
-      })(),
-      tileWidth: (() => {
-        switch(largeColumnNumber) {
-          case 1:
-            return '65%';
-          case 2:
-            return '85%';
-          default:
-            return '95%';
-        }
-      })(),
-      titleFontSize: '16px',
-      subtitleFontSize: '12px'
+    }) => {
+      const style = Object.assign({}, styles.gridList, {
+        width: gridWidth
+      });
+
+      return (
+        <GridList
+          cellHeight={cellHeight}
+          style={style}
+          cols={numberOfColumns}
+          padding={4}
+        >
+          {this.renderResults({ tileWidth, titleFontSize, subtitleFontSize })}
+        </GridList>
+      );
     };
 
     return (
       <div className="searchResults__container" styles={styles.root}>
         <MediaQuery query={MediaQueries.small}>
-          {renderGridList(smallOptions)}
+          {renderGridList(this.smallOptions)}
         </MediaQuery>
         <MediaQuery query={MediaQueries.medium}>
-          {renderGridList(mediumOptions)}
+          {renderGridList(this.mediumOptions)}
         </MediaQuery>
         <MediaQuery query={MediaQueries.large}>
-          {renderGridList(largeOptions)}
+          {renderGridList(this.largeOptions)}
         </MediaQuery>
       </div>
     );

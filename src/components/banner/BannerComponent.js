@@ -1,12 +1,12 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 
-import { appStyles } from '../variables';
+import { AppStyles } from '../../utilities/variables';
 
 export default class BannerComponent extends React.Component {
   render() {
     const bannerStyle = {
-      background: appStyles.fitMeBlue,
+      background: AppStyles.fitMeBlue,
     };
     const titleStyle = {
       textAlign: 'center'

@@ -3,15 +3,29 @@ import TextField from 'material-ui/TextField';
 import MediaQuery from 'react-responsive';
 
 import './Textbox.css';
-//TODO: Consolidate variables
-import { appStyles } from '../variables';
-import { MediaQueries } from '../../utilities/variables';
+import { MediaQueries, AppStyles } from '../../utilities/variables';
 
 export default class Textbox extends React.Component {
+  constructor(args) {
+    super(args);
+
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
+  handleKeyPress(event) {
+    switch(event.key) {
+      case 'Enter':
+        this.props.enterPressed();
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     const placeholder = this.props.label || '';
     const underlineStyle = {
-      borderBottomColor: appStyles.fitMeBlue,
+      borderBottomColor: AppStyles.fitMeBlue,
     };
     const renderTextField = ({ styles }) => (
       <TextField
@@ -19,10 +33,12 @@ export default class Textbox extends React.Component {
         hintText={placeholder}
         underlineFocusStyle={underlineStyle}
         style={styles}
+        onKeyPress={this.handleKeyPress}
+        onChange={this.props.passValueUp}
       />
     );
     const smallStyles = {
-      width: '30%',
+      width: '70%',
       fontSize: '16px'
     };
     const mediumStyles = {

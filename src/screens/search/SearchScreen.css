@@ -4,6 +4,8 @@
   width: 100%; }
 
 .searchScreen__searchContainer {
+  position: absolute;
+  top: 10%;
   width: 100%; }
   .searchScreen__searchContainer .textbox__container,
   .searchScreen__searchContainer .button__container {
@@ -14,4 +16,6 @@
   margin-left: 10px; }
 
 .searchScreen__searchResultsContainer {
+  position: absolute;
+  top: 25%;
   margin-top: 20px; }
