@@ -1,8 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardTitle, CardText, CardMedia } from 'material-ui/Card';
+import { Card, CardTitle, CardMedia } from 'material-ui/Card';
 
 import './TrainerProfileComponent.css';
+import ClassCard from '../../classCard/ClassCardComponent';
 
 export default class TrainerProfile extends React.Component {
   static extractData(data, id) {
@@ -47,25 +48,7 @@ export default class TrainerProfile extends React.Component {
   }
 
   get classes() {
-    return _.map(this.props.classes, classObj => {
-      const address = _.get(classObj, 'location.address');
-      return (<Card key={classObj.id}>
-        <CardTitle
-          title={classObj.title}
-          className="trainerProfile__classTitle"
-        />
-        <CardText className="trainerProfile__classTime">
-          {classObj.dayOfWeek} from {classObj.startTime} to {classObj.endTime}
-        </CardText>
-        <CardText className="trainerProfile__classLocation">
-          {classObj.location.name}
-        </CardText>
-        <CardText className="trainerProfile__classAddress">
-          {address.addressLine1} {address.addressLine2}
-          {address.city}, {address.state} {address.zip}
-        </CardText>
-      </Card>)
-    });
+    return _.map(this.props.classes, classObj => <ClassCard {...classObj} key={classObj.id} />);
   }
 
   render() {

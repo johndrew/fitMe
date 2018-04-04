@@ -20,28 +20,3 @@
   @media (min-width: 640px) {
     .trainerProfile__credentialItem {
       font-size: 24px !important; } }
-
-.trainerProfile__classTitle span {
-  font-size: 24px !important; }
-  @media (min-width: 640px) {
-    .trainerProfile__classTitle span {
-      font-size: 36px !important; } }
-
-.trainerProfile__classTime,
-.trainerProfile__classLocation,
-.trainerProfile__classAddress {
-  font-size: 16px !important; }
-  @media (min-width: 640px) {
-    .trainerProfile__classTime,
-    .trainerProfile__classLocation,
-    .trainerProfile__classAddress {
-      font-size: 24px !important; } }
-
-.trainerProfile__classTime {
-  padding-bottom: 5px !important; }
-
-.trainerProfile__classLocation {
-  padding-bottom: 0px !important; }
-
-.trainerProfile__classAddress {
-  padding-top: 0px !important; }
