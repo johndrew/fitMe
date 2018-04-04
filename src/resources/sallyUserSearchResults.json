@@ -4,7 +4,7 @@
     "trainer": {
       "id": "001",
       "name": "Carly",
-      "image": "images/trainer-Carly.jpeg",
+      "image": "/images/trainer-Carly.jpeg",
       "classes": [
         {
           "id": "001",
@@ -32,7 +32,7 @@
     "trainer": {
       "id": "002",
       "name": "Bill",
-      "image": "images/trainer-Bill.jpeg",
+      "image": "/images/trainer-Bill.jpeg",
       "classes": [
         {
           "id": "002",

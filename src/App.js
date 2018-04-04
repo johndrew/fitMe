@@ -6,6 +6,8 @@ import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
 
+import Banner from './components/banner/BannerComponent';
+
 import './App.css';
 import Paths from './paths';
 
@@ -26,6 +28,7 @@ class App extends Component {
       <BrowserRouter>
         <MuiThemeProvider>
           <div className="main">
+              <Banner title="FitMe" />
               <Route exact path={Paths.LOGIN} component={loginScreen}/>
               <Route path={Paths.SEARCH} component={searchScreen}/>
               <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>

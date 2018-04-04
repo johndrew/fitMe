@@ -1,0 +1,50 @@
+@import "../../../utilities/variables"
+
+$title-small: 24px
+$title-medium: 36px
+$text-small: 16px
+$text-medium: 24px
+
+.trainerProfile__container
+  @media (min-width: $large)
+    width: 70%
+    margin: 0px auto
+
+.trainerProfile__trainerName
+  span
+    font-size: $title-small !important
+    @media (min-width: $medium)
+      font-size: $title-medium !important
+
+.trainerProfile__infoContainer,
+.trainerProfile__classesContainer
+  @media (min-width: $large)
+    width: 60%
+    margin: 0px auto
+
+.trainerProfile__credentialItem
+  font-size: $text-small !important
+  @media (min-width: $medium)
+    font-size: $text-medium !important
+
+.trainerProfile__classTitle
+  span
+    font-size: $title-small !important
+    @media (min-width: $medium)
+      font-size: $title-medium !important
+
+.trainerProfile__classTime,
+.trainerProfile__classLocation,
+.trainerProfile__classAddress
+  font-size: $text-small !important
+  @media (min-width: $medium)
+    font-size: $text-medium !important
+
+.trainerProfile__classTime
+  padding-bottom: 5px !important
+
+.trainerProfile__classLocation
+  padding-bottom: 0px !important
+
+.trainerProfile__classAddress
+  padding-top: 0px !important
