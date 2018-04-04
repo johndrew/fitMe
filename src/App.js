@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
+import PurchaseScreen from './screens/purchase/PurchaseScreen';
 
 import Banner from './components/banner/BannerComponent';
 
@@ -21,6 +22,9 @@ const searchScreen = () => {
 const profileScreen = ({ match }) => {
   return <ProfileScreen type={match.params.type} id={match.params.id} />;
 }
+const purchaseScreen = ({ match }) => {
+  return <PurchaseScreen id={match.params.id}  />;
+}
 
 class App extends Component {
   render() {
@@ -32,6 +36,7 @@ class App extends Component {
               <Route exact path={Paths.LOGIN} component={loginScreen}/>
               <Route path={Paths.SEARCH} component={searchScreen}/>
               <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>
+              <Route path={`${Paths.PURCHASE}/:id`} component={purchaseScreen}/>
           </div>
         </MuiThemeProvider>
       </BrowserRouter>

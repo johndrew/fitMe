@@ -25,7 +25,7 @@ export default class ClassCard extends React.Component {
           {address.addressLine1} {address.addressLine2}
           {address.city}, {address.state} {address.zip}
         </CardText>
-        <Link to={`/purchase/class/${this.props.id}`}>
+        <Link to={`/purchase/${this.props.id}`}>
           <CardText>
             Purchase Session
           </CardText>
