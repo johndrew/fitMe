@@ -3,7 +3,7 @@ import React from 'react';
 import './SearchScreen.css';
 
 import Button from '../../components/button/ButtonComponent';
-import Textbox from '../../components/textbox/TextboxComponent';
+import SearchBar from '../../components/searchBar/SearchBarComponent';
 import SearchResults from '../../components/searchResults/SearchResultsComponent';
 
 // Temporary Resources
@@ -51,12 +51,11 @@ export default class SearchScreen extends React.Component {
     return (
       <div className="searchScreen__container">
         <div className="searchScreen__searchContainer">
-          <Textbox
+          <SearchBar
             label="Search"
             passValueUp={this.handleSearchValue}
             enterPressed={this.handleSearchRequest}
           />
-          {/* TODO: add search icon */}
           {/* TODO: Make search options component */}
           <Button
             label="Search Options..."

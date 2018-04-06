@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
+import MapSearchScreen from './screens/mapSearch/MapSearchScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
 import PurchaseScreen from './screens/purchase/PurchaseScreen';
 
@@ -18,6 +19,9 @@ const loginScreen = () => {
 };
 const searchScreen = () => {
   return <SearchScreen />;
+};
+const mapSearchScreen = () => {
+  return <MapSearchScreen />;
 };
 const profileScreen = ({ match }) => {
   return <ProfileScreen type={match.params.type} id={match.params.id} />;
@@ -35,6 +39,7 @@ class App extends Component {
               <Banner title="FitMe" />
               <Route exact path={Paths.LOGIN} component={loginScreen}/>
               <Route path={Paths.SEARCH} component={searchScreen}/>
+              <Route path={Paths.MAP_SEARCH} component={mapSearchScreen}/>
               <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>
               <Route path={`${Paths.PURCHASE}/:id`} component={purchaseScreen}/>
           </div>
