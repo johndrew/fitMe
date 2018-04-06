@@ -2,8 +2,8 @@ import React from 'react';
 
 import './SearchScreen.css';
 
-import Button from '../../components/button/ButtonComponent';
 import SearchBar from '../../components/searchBar/SearchBarComponent';
+import SearchOptions from '../../components/searchOptions/SearchOptionsComponent';
 import SearchResults from '../../components/searchResults/SearchResultsComponent';
 
 // Temporary Resources
@@ -56,12 +56,7 @@ export default class SearchScreen extends React.Component {
             passValueUp={this.handleSearchValue}
             enterPressed={this.handleSearchRequest}
           />
-          {/* TODO: Make search options component */}
-          <Button
-            label="Search Options..."
-            type="flat"
-            onClick={this.openSearchOptions}
-          />
+          <SearchOptions />
         </div>
         {this.state.searchResultsVisible && <div className="searchScreen__searchResultsContainer">
           <SearchResults results={SallyUserSearchResults} />

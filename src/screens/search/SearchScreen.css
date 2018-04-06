@@ -2,9 +2,14 @@
   position: absolute;
   top: 10%;
   width: 100%; }
-  .searchScreen__searchContainer .textbox__container,
-  .searchScreen__searchContainer .button__container {
-    text-align: center; }
+  .searchScreen__searchContainer .searchBar__container,
+  .searchScreen__searchContainer .searchOptions__container {
+    text-align: center;
+    margin: 0 auto; }
+  .searchScreen__searchContainer .searchBar__container {
+    width: 80%; }
+  .searchScreen__searchContainer .searchOptions__container {
+    width: 60%; }
 
 .searchScreen__searchOptions {
   font-size: 14px;

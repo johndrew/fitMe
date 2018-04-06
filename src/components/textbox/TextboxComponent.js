@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import MediaQuery from 'react-responsive';
@@ -9,17 +10,44 @@ export default class Textbox extends React.Component {
   constructor(args) {
     super(args);
 
+    this.state = {
+      value: '',
+    };
+
+    _.defaults(this.props, {
+      clearOnEnter: false,
+    });
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleKeyPress(event) {
     switch(event.key) {
       case 'Enter':
         this.props.enterPressed();
+        if (this.props.clearOnEnter) {
+          this.clear();
+        }
         break;
       default:
         break;
     }
+  }
+
+  handleChange(event, value) {
+    this.setState({
+      value: value,
+    });
+
+    this.props.passValueUp(event, value);
+  }
+
+  clear() {
+    // TODO: determine if we need to pass the cleared value up always, or by configuration
+    this.setState({
+      value: ''
+    });
   }
 
   render() {
@@ -34,7 +62,8 @@ export default class Textbox extends React.Component {
         underlineFocusStyle={underlineStyle}
         style={styles}
         onKeyPress={this.handleKeyPress}
-        onChange={this.props.passValueUp}
+        onChange={this.handleChange}
+        value={this.state.value}
       />
     );
     const smallStyles = {

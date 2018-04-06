@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './SearchBarComponent.css';
-import Textbox from '../../components/textbox/TextboxComponent';
+import Textbox from '../textbox/TextboxComponent';
 import Paths from '../../paths';
 
 export default class SearchBarComponent extends React.Component {

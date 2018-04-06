@@ -1,9 +1,7 @@
 .searchBar__container {
   display: flex;
   justify-content: center;
-  position: relative;
-  width: 80%;
-  margin: 0 auto; }
+  position: relative; }
   .searchBar__container .textbox__container {
     width: 100%; }
 
