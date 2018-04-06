@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import DropdownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import _ from 'lodash';
 
 import './SearchOptionsComponent.css';
 import Button from '../button/ButtonComponent';
@@ -31,7 +32,25 @@ export default class SearchOptionsComponent extends React.Component {
     });
   }
 
+  get trainingLengthOptions() {
+    const validLengths = [
+      { value: '0.5', label: '30 minutes' },
+      { value: '1', label: '1 hour' },
+      { value: '1.5', label: '1 1/2 hour' },
+      { value: '2', label: '2 hours' },
+    ];
+
+    return _.map(validLengths, length =>
+      <MenuItem
+        value={length.value}
+        primaryText={length.label}
+      />
+    );
+  }
+
   get options() {
+    const trainingLengthItems = this.trainingLengthOptions;
+
     return (
       <div className="searchOptions__optionsContainer">
         <Paper>
@@ -40,7 +59,9 @@ export default class SearchOptionsComponent extends React.Component {
               Training Length:
             </p>
             {/* TODO: training length */}
-            <DropdownMenu />
+            <DropdownMenu>
+              {trainingLengthItems}
+            </DropdownMenu>
           </div>
           <div className="searchOptions__trainingTypeContainer">
             <p className="searchOptions__label searchOptions__label--trainingType">
