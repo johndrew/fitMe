@@ -13,12 +13,13 @@ import Banner from './components/banner/BannerComponent';
 import './App.css';
 import Paths from './paths';
 
+// TODO: Inject screens directly into route component field and let screen handle match params
 // Screens
 const loginScreen = () => {
   return <LoginScreen />;
 };
-const searchScreen = () => {
-  return <SearchScreen />;
+const searchScreen = ({ match, history }) => {
+  return <SearchScreen history={history} />;
 };
 const mapSearchScreen = () => {
   return <MapSearchScreen />;
