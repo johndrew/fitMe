@@ -6,6 +6,7 @@ import './SearchScreen.css';
 import SearchBar from '../../components/searchBar/SearchBarComponent';
 import SearchOptions from '../../components/searchOptions/SearchOptionsComponent';
 import SearchResults from '../../components/searchResults/SearchResultsComponent';
+import MapSearch from '../../components/mapSearch/MapSearchComponent';
 
 // Temporary Resources
 import SallyUserSearchResults from '../../resources/sallyUserSearchResults.json';
@@ -15,10 +16,14 @@ export default class SearchScreen extends React.Component {
   constructor(args) {
     super(args);
     const showSearchResults = _.includes(args.history.location.search, 'searchResultsVisible=true');
+    const showMap = _.includes(args.history.location.search, 'mapVisible=true');
+    const showMapResults = _.includes(args.history.location.search, 'mapResultsVisible=true');
 
     this.state = {
       searchOptionsOpen: false,
       searchResultsVisible: showSearchResults,
+      showMap: showMap,
+      showMapMarkers: showMapResults
     };
 
     // Bind methods
@@ -26,6 +31,8 @@ export default class SearchScreen extends React.Component {
     this.closeSearchOptions = this.closeSearchOptions.bind(this);
     this.handleSearchValue = this.handleSearchValue.bind(this);
     this.handleSearchRequest = this.handleSearchRequest.bind(this);
+    this.handleMapSearchRequest = this.handleMapSearchRequest.bind(this);
+    this.handleSearchViewRequest = this.handleSearchViewRequest.bind(this);
 
     this.historyListener = args.history.listen((location, action) => {
       // Ensure we only press back once, and not twice: once for url query and once for base path
@@ -56,10 +63,33 @@ export default class SearchScreen extends React.Component {
   }
 
   handleSearchRequest() {
+    if (this.state.showMap) {
+      this.setState({
+        showMapMarkers: true,
+      });
+      this.props.history.push(`${Paths.SEARCH}?mapVisible=true&mapResultsVisible=true`);
+    } else {
+      this.setState({
+        searchResultsVisible: true,
+      });
+      this.props.history.push(`${Paths.SEARCH}?searchResultsVisible=true`);
+    }
+  }
+
+  handleMapSearchRequest() {
     this.setState({
-      searchResultsVisible: true
+      showMap: true,
+      searchResultsVisible: false,
     });
-    this.props.history.push(`${Paths.SEARCH}?searchResultsVisible=true`);
+    this.props.history.push(`${Paths.SEARCH}?mapVisible=true`);
+  }
+
+  handleSearchViewRequest() {
+    this.setState({
+      showMap: false,
+      showMapMarkers: false,
+    });
+    this.props.history.push(Paths.SEARCH);
   }
 
   render() {
@@ -70,12 +100,25 @@ export default class SearchScreen extends React.Component {
             label="Search"
             passValueUp={this.handleSearchValue}
             enterPressed={this.handleSearchRequest}
+            mapIconPressed={this.handleMapSearchRequest}
+            searchIconPressed={this.handleSearchViewRequest}
+            showMapIcon={!this.state.showMap}
+            showSearchIcon={this.state.showMap}
           />
-          <SearchOptions />
+          {!this.state.showMap &&
+            <SearchOptions />
+          }
         </div>
-        {this.state.searchResultsVisible && <div className="searchScreen__searchResultsContainer">
-          <SearchResults results={SallyUserSearchResults} />
-        </div>}
+        {this.state.searchResultsVisible &&
+          <div className="searchScreen__searchResultsContainer">
+            <SearchResults results={SallyUserSearchResults} />
+          </div>
+        }
+        {this.state.showMap &&
+          <div className="searchScreen__mapSearchContainer">
+            <MapSearch addMarkers={this.state.showMapMarkers} />
+          </div>
+        }
       </div>
     );
   }

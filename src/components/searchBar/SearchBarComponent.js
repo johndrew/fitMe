@@ -6,6 +6,34 @@ import Textbox from '../textbox/TextboxComponent';
 import Paths from '../../paths';
 
 export default class SearchBarComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showMapIcon: this.props.showMapIcon,
+      showSearchIcon: this.props.showSearchIcon,
+    };
+
+    this.handleMapIconPressed = this.handleMapIconPressed.bind(this);
+    this.handleSearchIconPressed = this.handleSearchIconPressed.bind(this);
+  }
+
+  handleMapIconPressed() {
+    this.setState({
+      showMapIcon: false,
+      showSearchIcon: true,
+    });
+    this.props.mapIconPressed();
+  }
+
+  handleSearchIconPressed() {
+    this.setState({
+      showMapIcon: true,
+      showSearchIcon: false,
+    });
+    this.props.searchIconPressed();
+  }
+
   render() {
     return (
       <div className="searchBar__container">
@@ -16,9 +44,22 @@ export default class SearchBarComponent extends React.Component {
           enterPressed={this.props.enterPressed}
         />
         {/* TODO: replace span with search icon */}
-        <Link to={`${Paths.MAP_SEARCH}`} className="searchBar__mapIcon">
-          <span>Map</span>
-        </Link>
+        {this.state.showMapIcon &&
+          <span
+            className="searchBar__mapIcon"
+            onClick={this.handleMapIconPressed}
+          >
+            <img src="/icons/place.png" />
+          </span>
+        }
+        {this.state.showSearchIcon &&
+          <span
+            className="searchBar__searchIcon"
+            onClick={this.handleSearchIconPressed}
+          >
+          <img src="/icons/search.png" />
+          </span>
+        }
       </div>
     );
   }

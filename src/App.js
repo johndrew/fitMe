@@ -40,7 +40,6 @@ class App extends Component {
               <Banner title="FitMe" />
               <Route exact path={Paths.LOGIN} component={loginScreen}/>
               <Route path={Paths.SEARCH} component={searchScreen}/>
-              <Route path={Paths.MAP_SEARCH} component={mapSearchScreen}/>
               <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>
               <Route path={`${Paths.PURCHASE}/:id`} component={purchaseScreen}/>
           </div>
