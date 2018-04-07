@@ -10,6 +10,7 @@ export default class SearchBarComponent extends React.Component {
     return (
       <div className="searchBar__container">
         <Textbox
+          id="searchBar"
           label={this.props.label}
           passValueUp={this.props.passValueUp}
           enterPressed={this.props.enterPressed}

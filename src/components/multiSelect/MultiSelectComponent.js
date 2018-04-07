@@ -76,6 +76,7 @@ export default class MultiSelectComponent extends React.Component {
     return (
       <div className="multiSelect__container">
         <Textbox
+          id={this.props.id}
           passValueUp={this.prepareItem}
           enterPressed={this.addItem}
           clearOnEnter={true}

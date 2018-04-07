@@ -42,6 +42,7 @@ export default class SearchOptionsComponent extends React.Component {
 
     return _.map(validLengths, length =>
       <MenuItem
+        key={length.value}
         value={length.value}
         primaryText={length.label}
       />
@@ -68,14 +69,14 @@ export default class SearchOptionsComponent extends React.Component {
               Training Type:
             </p>
             {/* TODO: training type */}
-            <MultiSelect />
+            <MultiSelect id="searchOptionsTrainingTypes" />
           </div>
           <div className="searchOptions__sessionTypeContainer">
             <p className="searchOptions__label searchOptions__label--sessionType">
               Session Type:
             </p>
             {/* TODO: session type */}
-            <MultiSelect />
+            <MultiSelect id="searchOptionsSessionTypes" />
           </div>
           <Button
             label="Close"

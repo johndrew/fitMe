@@ -57,6 +57,7 @@ export default class Textbox extends React.Component {
     };
     const renderTextField = ({ styles }) => (
       <TextField
+        id={this.props.id}
         className="textbox__input"
         hintText={placeholder}
         underlineFocusStyle={underlineStyle}
