@@ -26,7 +26,7 @@ export default class MapSearchComponent extends React.Component {
     // TODO: Add tool tip when map click
     return (
       <div className="mapSearch__container">
-        <img src={this.getMapURl()} />
+        <img src={this.getMapURl()} alt="The University of Tampa" />
       </div>
     );
   }

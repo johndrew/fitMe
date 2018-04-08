@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './SearchBarComponent.css';
 import Textbox from '../textbox/TextboxComponent';
-import Paths from '../../paths';
 
 export default class SearchBarComponent extends React.Component {
   constructor(props) {
@@ -49,7 +47,7 @@ export default class SearchBarComponent extends React.Component {
             className="searchBar__mapIcon"
             onClick={this.handleMapIconPressed}
           >
-            <img src="/icons/place.png" />
+            <img src="/icons/place.png" alt="map icon" />
           </span>
         }
         {this.state.showSearchIcon &&
@@ -57,7 +55,7 @@ export default class SearchBarComponent extends React.Component {
             className="searchBar__searchIcon"
             onClick={this.handleSearchIconPressed}
           >
-          <img src="/icons/search.png" />
+          <img src="/icons/search.png" alt="search icon"/>
           </span>
         }
       </div>

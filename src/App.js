@@ -4,7 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
-import MapSearchScreen from './screens/mapSearch/MapSearchScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
 import PurchaseScreen from './screens/purchase/PurchaseScreen';
 
@@ -20,9 +19,6 @@ const loginScreen = () => {
 };
 const searchScreen = ({ match, history }) => {
   return <SearchScreen history={history} />;
-};
-const mapSearchScreen = () => {
-  return <MapSearchScreen />;
 };
 const profileScreen = ({ match }) => {
   return <ProfileScreen type={match.params.type} id={match.params.id} />;

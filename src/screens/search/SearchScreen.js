@@ -34,16 +34,7 @@ export default class SearchScreen extends React.Component {
     this.handleMapSearchRequest = this.handleMapSearchRequest.bind(this);
     this.handleSearchViewRequest = this.handleSearchViewRequest.bind(this);
 
-    this.historyListener = args.history.listen((location, action) => {
-      // Ensure we only press back once, and not twice: once for url query and once for base path
-      if (location.pathname === Paths.SEARCH && showSearchResults) {
-        args.history.goBack();
-      }
-    })
-  }
-
-  componentWillUnmount() {
-    this.historyListener();
+    // TODO: add back nav to to previous path
   }
 
   openSearchOptions() {
