@@ -1,7 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 import './MapSearchComponent.css';
+import Paths from '../../paths';
+
+// Temporary Resources
+import SallyUserSearchResults from '../../resources/sallyUserSearchResults.json';
 
 export default class MapSearchComponent extends React.Component {
   getMapURl() {
@@ -23,10 +28,20 @@ export default class MapSearchComponent extends React.Component {
   }
 
   render() {
+    // This would ideally point to a real gym id, but since a static map is used, this can point to
+    // any gym. This one in particular points to Powerbell Fitness gym.
+    const anyGym = '001';
+    const staticMap = <img src={this.getMapURl()} alt="The University of Tampa" />;
+
     // TODO: Add tool tip when map click
     return (
       <div className="mapSearch__container">
-        <img src={this.getMapURl()} alt="The University of Tampa" />
+        {this.props.addMarkers &&
+        <Link to={`${Paths.GYM}/${anyGym}`}>
+          {staticMap}
+        </Link>
+        }
+        {!this.props.addMarkers && staticMap}
       </div>
     );
   }

@@ -3,6 +3,7 @@ const Paths = Object.freeze({
   SEARCH: '/search',
   MAP_SEARCH: '/mapSearch',
   PROFILE: '/profile',
+  GYM: '/gym',
   PURCHASE: '/purchase'
 });
 

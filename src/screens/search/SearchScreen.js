@@ -13,11 +13,11 @@ import SallyUserSearchResults from '../../resources/sallyUserSearchResults.json'
 import Paths from '../../paths';
 
 export default class SearchScreen extends React.Component {
-  constructor(args) {
-    super(args);
-    const showSearchResults = _.includes(args.history.location.search, 'searchResultsVisible=true');
-    const showMap = _.includes(args.history.location.search, 'mapVisible=true');
-    const showMapResults = _.includes(args.history.location.search, 'mapResultsVisible=true');
+  constructor(props) {
+    super(props);
+    const showSearchResults = _.includes(props.history.location.search, 'searchResultsVisible=true');
+    const showMap = _.includes(props.history.location.search, 'mapVisible=true');
+    const showMapResults = _.includes(props.history.location.search, 'mapResultsVisible=true');
 
     this.state = {
       searchOptionsOpen: false,
