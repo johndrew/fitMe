@@ -1,0 +1,21 @@
+.trainerInfoCard__trainerName span:first-child() {
+  font-size: 24px !important; }
+  @media (min-width: 640px) {
+    .trainerInfoCard__trainerName span:first-child() {
+      font-size: 36px !important; } }
+
+.trainerInfoCard__trainerName span:nth-child(2) {
+  font-size: 16px !important; }
+
+.trainerInfoCard__credentialItem {
+  font-size: 16px !important; }
+  @media (min-width: 640px) {
+    .trainerInfoCard__credentialItem {
+      font-size: 24px !important; } }
+
+.trainerInfoCard__biographyParagraph--0 {
+  margin-bottom: 0px; }
+
+.trainerInfoCard__biographySeeMore {
+  font-size: 12px;
+  color: blue; }
