@@ -1,11 +1,5 @@
-.trainerInfoCard__trainerName span:first-child() {
-  font-size: 24px !important; }
-  @media (min-width: 640px) {
-    .trainerInfoCard__trainerName span:first-child() {
-      font-size: 36px !important; } }
-
-.trainerInfoCard__trainerName span:nth-child(2) {
-  font-size: 16px !important; }
+.trainerInfoCard__card {
+  padding-bottom: 5px !important; }
 
 .trainerInfoCard__credentialItem {
   font-size: 16px !important; }

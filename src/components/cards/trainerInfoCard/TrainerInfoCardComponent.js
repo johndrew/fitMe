@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardMedia, CardText } from 'material-ui/Card';
+import { Card, CardText } from 'material-ui/Card';
 import _ from 'lodash';
 
 // FIXME: BUG: styles not applied until refresh
@@ -47,24 +47,8 @@ export default class TrainerInfoCardComponent extends React.Component {
 
     return (
       <Card
-        style={{ paddingBottom: '5px' }}
+        className="trainerInfoCard__card"
       >
-        <CardMedia
-          overlay={
-            <CardTitle
-              title={this.props.name}
-              subtitle={this.props.title}
-              className="trainerInfoCard__trainerName"
-            />
-          }
-          className="trainerInfoCard__trainerImageContainer"
-        >
-          <img
-            src={this.props.image}
-            alt={this.props.name}
-            className="trainerInfoCard__trainerImage"
-          />
-        </CardMedia>
         <CardText>
           <div
             className="trainerInfoCard__biographyContainer"

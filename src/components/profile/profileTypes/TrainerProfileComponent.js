@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import './TrainerProfileComponent.css';
 import InfoCard from '../../cards/trainerInfoCard/TrainerInfoCardComponent';
+import ImageCard from '../../cards/trainerImageCard/TrainerImageCardComponent';
 import ClassCard from '../../cards/classCard/ClassCardComponent';
 
 export default class TrainerProfile extends React.Component {
@@ -20,6 +21,9 @@ export default class TrainerProfile extends React.Component {
   render() {
     return (
       <div className="trainerProfile__container">
+        <div className="trainerProfile__imageContainer">
+          <ImageCard {...this.props} />
+        </div>
         <div className="trainerProfile__infoContainer">
           <InfoCard {...this.props} />
         </div>

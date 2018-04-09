@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import './MapSearchComponent.css';
 import Paths from '../../paths';
 
-// Temporary Resources
-import SallyUserSearchResults from '../../resources/sallyUserSearchResults.json';
-
 export default class MapSearchComponent extends React.Component {
   getMapURl() {
     const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap';
