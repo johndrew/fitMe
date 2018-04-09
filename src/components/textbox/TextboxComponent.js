@@ -49,6 +49,15 @@ export default class Textbox extends React.Component {
     });
   }
 
+  applyMaskToValue() {
+    // TODO: refactor to enable any mask
+    return this.state.value.replace(/\w/, '*');
+  }
+
+  get value() {
+    return this.props.applyMask ? this.applyMaskToValue() : this.state.value;
+  }
+
   render() {
     const placeholder = this.props.label || '';
     const underlineStyle = {
@@ -64,7 +73,7 @@ export default class Textbox extends React.Component {
           underlineFocusStyle={underlineStyle}
           onKeyPress={this.handleKeyPress}
           onChange={this.handleChange}
-          value={this.state.value}
+          value={this.value}
         />
       </div>
     );
