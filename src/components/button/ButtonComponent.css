@@ -1,0 +1,5 @@
+.button__button span {
+  font-size: 16px !important; }
+  @media (min-width: 640px) {
+    .button__button span {
+      font-size: 24px !important; } }

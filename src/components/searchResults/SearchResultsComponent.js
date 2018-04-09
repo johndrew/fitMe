@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { GridList } from 'material-ui/GridList';
 import MediaQuery from 'react-responsive';
 
-import './SearchResults.css';
+import './SearchResultsComponent.css';
 import TrainerResult from './resultComponents/trainerResult/TrainerResultComponent';
 import { MediaQueries } from '../../utilities/variables';
 
@@ -12,10 +12,9 @@ export default class SearchResults extends React.Component {
     if (result.trainer) {
       return <TrainerResult
         {...result.trainer}
+        className="searchResults__result"
         key={result.id}
         width={options.tileWidth}
-        titleFontSize={options.titleFontSize}
-        subtitleFontSize={options.subtitleFontSize}
       />;
     } else {
       // TODO: LIBRARY: Add front-end logger
@@ -33,22 +32,16 @@ export default class SearchResults extends React.Component {
       cellHeight: 200,
       numberOfColumns: 1,
       tileWidth: '75%',
-      titleFontSize: '16px',
-      subtitleFontSize: '12px'
     };
   }
 
   get mediumOptions() {
     const mediumColumnNumber = _.min([this.props.results.length, 2]);
-    const gridWidth = mediumColumnNumber === 1 ? '65%' : '100%';
 
     return {
       cellHeight: 300,
       numberOfColumns: mediumColumnNumber,
-      gridWidth,
       tileWidth: '95%',
-      titleFontSize: '30px',
-      subtitleFontSize: '24px'
     };
   }
 
@@ -64,7 +57,6 @@ export default class SearchResults extends React.Component {
           return 400;
       }
     })();
-    const gridWidth = largeColumnNumber === 1 ? '65%' : '80%';
     const tileWidth = (() => {
       switch(largeColumnNumber) {
         case 1:
@@ -79,52 +71,36 @@ export default class SearchResults extends React.Component {
     return {
       cellHeight,
       numberOfColumns: largeColumnNumber,
-      gridWidth,
       tileWidth,
-      titleFontSize: '30px',
-      subtitleFontSize: '24px'
     };
   }
 
   render() {
-    const styles = {
-      root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-      },
-      gridList: {
-        height: 'auto',
-        overflowY: 'auto',
-        margin: '0px auto'
-      },
-    };
     const renderGridList = ({
       cellHeight,
       numberOfColumns,
       tileWidth,
-      titleFontSize,
-      subtitleFontSize,
-      gridWidth,
     }) => {
-      const style = Object.assign({}, styles.gridList, {
-        width: gridWidth
+      const style = Object.assign({}, {
+        width: this.props.results.length === 1 ? '65%' : '100%',
       });
 
       return (
         <GridList
+          className="searchResults__resultList"
           cellHeight={cellHeight}
           style={style}
           cols={numberOfColumns}
           padding={4}
         >
-          {this.renderResults({ tileWidth, titleFontSize, subtitleFontSize })}
+          {this.renderResults({ tileWidth })}
         </GridList>
       );
     };
 
+    // TODO: Finish removing MediaQuery by finding how to style based on number of children
     return (
-      <div className="searchResults__container" styles={styles.root}>
+      <div className="searchResults__container">
         <MediaQuery query={MediaQueries.small}>
           {renderGridList(this.smallOptions)}
         </MediaQuery>
