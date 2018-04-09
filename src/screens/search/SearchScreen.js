@@ -33,8 +33,6 @@ export default class SearchScreen extends React.Component {
     this.handleSearchRequest = this.handleSearchRequest.bind(this);
     this.handleMapSearchRequest = this.handleMapSearchRequest.bind(this);
     this.handleSearchViewRequest = this.handleSearchViewRequest.bind(this);
-
-    // TODO: add back nav to to previous path
   }
 
   openSearchOptions() {

@@ -41,7 +41,6 @@ export default class SearchBarComponent extends React.Component {
           passValueUp={this.props.passValueUp}
           enterPressed={this.props.enterPressed}
         />
-        {/* TODO: replace span with search icon */}
         {this.state.showMapIcon &&
           <span
             className="searchBar__mapIcon"
