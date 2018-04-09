@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card, CardTitle, CardMedia } from 'material-ui/Card';
+import { Card, CardTitle, CardMedia, CardText } from 'material-ui/Card';
 import _ from 'lodash';
 
+// FIXME: BUG: styles not applied until refresh
+// Steps: load search page, click on trainer, see lack of styles, refresh, see styles
 import './TrainerInfoCardComponent.css';
 
 export default class TrainerInfoCardComponent extends React.Component {
@@ -63,20 +65,29 @@ export default class TrainerInfoCardComponent extends React.Component {
             className="trainerInfoCard__trainerImage"
           />
         </CardMedia>
-        <div onClick={this.toggleBio}>
-          <h4 className="trainerInfoCard__biographyHeader">Biography</h4>
-          <div className="trainerInfoCard__trainerBiography">
-            {_.first(bioDescriptions)}
-            <a className="trainerInfoCard__biographySeeMore">
-              {this.state.bioOpen ? 'See Less' : 'See More'}
-            </a>
-            {this.state.bioOpen && _.tail(bioDescriptions)}
+        <CardText>
+          <div
+            className="trainerInfoCard__biographyContainer"
+            onClick={this.toggleBio}
+          >
+            <h4 className="trainerInfoCard__biographyHeader">
+              Biography
+            </h4>
+            <div className="trainerInfoCard__trainerBiography">
+              {_.first(bioDescriptions)}
+              <a className="trainerInfoCard__biographySeeMore">
+                {this.state.bioOpen ? 'See Less' : 'See More'}
+              </a>
+              {this.state.bioOpen && _.tail(bioDescriptions)}
+            </div>
           </div>
-        </div>
-        <h4>Certifications</h4>
-        <ul>
-          {this.certifications}
-        </ul>
+          <h4 className="trainerInfoCard__certificationsHeader">
+            Certifications
+          </h4>
+          <ul className="trainerInfoCard__certifications">
+            {this.certifications}
+          </ul>
+        </CardText>
       </Card>
     );
   }

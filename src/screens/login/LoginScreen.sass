@@ -1,9 +1,15 @@
 @import "../../utilities/variables"
   
 .loginScreen__container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-height: 550px
   margin: 0px auto
   text-align: center
   padding: 15px 10px
+  @media (min-width: $medium)
+    min-height: 900px
 
 .loginScreen__header
   color: $fitMe-font
@@ -33,7 +39,6 @@
 .textbox__input
   width: 100%
   border: none
-  // border-bottom: 2px $fitMe-blue solid
   padding: 10px 10px 10px 5px
   @media (min-width: $medium)
     font-size: 1.5em

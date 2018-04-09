@@ -27,17 +27,20 @@ const purchaseScreen = ({ match }) => {
   return <PurchaseScreen id={match.params.id}  />;
 }
 
+// FIXME: Go back full page on back navigation
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <MuiThemeProvider>
-          <div className="main">
-              <Banner title="FitMe" />
+          <div className="content">
+            <Banner title="FitMe" />
+            <div className="main">
               <Route exact path={Paths.LOGIN} component={loginScreen}/>
               <Route path={Paths.SEARCH} component={searchScreen}/>
               <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>
               <Route path={`${Paths.PURCHASE}/:id`} component={purchaseScreen}/>
+            </div>
           </div>
         </MuiThemeProvider>
       </BrowserRouter>

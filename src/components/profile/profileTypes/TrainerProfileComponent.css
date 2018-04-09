@@ -1,9 +1,7 @@
-.trainerProfile__container {
-  margin-top: 35%; }
-  @media (min-width: 1024px) {
-    .trainerProfile__container {
-      width: 70%;
-      margin: 0px auto; } }
+@media (min-width: 1024px) {
+  .trainerProfile__container {
+    width: 70%;
+    margin: 0px auto; } }
 
 @media (min-width: 1024px) {
   .trainerProfile__infoContainer,
