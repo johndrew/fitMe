@@ -1,0 +1,16 @@
+.searchBar__container {
+  display: flex;
+  justify-content: center;
+  position: relative; }
+  .searchBar__container .textbox__container {
+    width: 100%; }
+
+.searchBar__mapIcon,
+.searchBar__searchIcon {
+  position: absolute;
+  right: 10%;
+  bottom: 10px; }
+  @media (min-width: 640px) {
+    .searchBar__mapIcon,
+    .searchBar__searchIcon {
+      right: 11%; } }

@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import LoginScreen from './screens/login/LoginScreen';
 import SearchScreen from './screens/search/SearchScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
+import GymScreen from './screens/gym/GymScreen';
 import PurchaseScreen from './screens/purchase/PurchaseScreen';
 
 import Banner from './components/banner/BannerComponent';
@@ -12,31 +13,21 @@ import Banner from './components/banner/BannerComponent';
 import './App.css';
 import Paths from './paths';
 
-// Screens
-const loginScreen = () => {
-  return <LoginScreen />;
-};
-const searchScreen = () => {
-  return <SearchScreen />;
-};
-const profileScreen = ({ match }) => {
-  return <ProfileScreen type={match.params.type} id={match.params.id} />;
-}
-const purchaseScreen = ({ match }) => {
-  return <PurchaseScreen id={match.params.id}  />;
-}
-
+// FIXME: Go back full page on back navigation instead of for each query
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <MuiThemeProvider>
-          <div className="main">
-              <Banner title="FitMe" />
-              <Route exact path={Paths.LOGIN} component={loginScreen}/>
-              <Route path={Paths.SEARCH} component={searchScreen}/>
-              <Route path={`${Paths.PROFILE}/:type/:id`} component={profileScreen}/>
-              <Route path={`${Paths.PURCHASE}/:id`} component={purchaseScreen}/>
+          <div className="content">
+            <Banner title="FitMe" />
+            <div className="main">
+              <Route exact path={Paths.LOGIN} component={LoginScreen}/>
+              <Route path={Paths.SEARCH} component={SearchScreen}/>
+              <Route path={`${Paths.PROFILE}/:type/:id`} component={ProfileScreen}/>
+              <Route path={`${Paths.GYM}/:id`} component={GymScreen}/>
+              <Route path={`${Paths.PURCHASE}/:id`} component={PurchaseScreen}/>
+            </div>
           </div>
         </MuiThemeProvider>
       </BrowserRouter>

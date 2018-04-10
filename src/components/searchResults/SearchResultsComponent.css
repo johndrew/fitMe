@@ -1,0 +1,9 @@
+.searchResults__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.searchResults__resultList {
+  height: auto;
+  overflow-y: auto;
+  margin: 0px auto; }

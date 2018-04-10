@@ -3,7 +3,8 @@
     "id": "001",
     "trainer": {
       "id": "001",
-      "name": "Carly",
+      "name": "Carly Crunch",
+      "title": "Kettlebell Sport Coach, Personal Trainer, B.S.",
       "image": "/images/trainer-Carly.jpeg",
       "classes": [
         {
@@ -24,14 +25,43 @@
             }
           }
         }
-      ]
+      ],
+      "certifications": [
+        {
+          "shorthandName": "CSCS",
+          "name": "Certified Strength and Conditioning Specialist"
+        },
+        {
+          "shorthandName": "RKC",
+          "name": "Russian Kettlebell Challenge"
+        },
+        {
+          "shorthandName": "FMS",
+          "name": "Functional Movement Systems"
+        }
+      ],
+      "biography": {
+        "description": [
+          "Carly has been into fitness and health for as long as she could walk. Early on in she began to play sports in her little town in Michigan, eventually joining the volleyball and softball teams at the middle school and high school level.",
+          "Though Carly did not play at the collegiate level, she did continue with her focus on health and fitness at the University of Tampa, where she graduated with a B.S. in Athletic Training. After graduating in 2013, she became a Certified Strength and Conditioning Specialist (CSCS) through NSCA. Carly has since continued her exploration of her favorite types of exercises and techniques which led her to finding a passion with kettlebell training.",
+          "Coming to realize the benefits of kettlebell training was just the beginning. Carly earned her Russian Kettlebell Challenge certification as well as her Functional Movement Systems certification prior to teaching at Kettle POP, where she now teaches Kettlebell and Form & Function classes and is available for One-on-One sessions."
+        ]
+      },
+      "social": {
+        "mediaHandles": {
+          "Instagram": "Kettle_Crunch",
+          "Snapchat": "CarlyCrunch",
+          "Facebook": "Carly Crunch Fitness"
+        }
+      }
     }
   },
   {
     "id": "002",
     "trainer": {
       "id": "002",
-      "name": "Bill",
+      "name": "Bill Bellwork",
+      "title": "Kettlebell Sports Coach, Personal Trainer",
       "image": "/images/trainer-Bill.jpeg",
       "classes": [
         {
@@ -52,7 +82,98 @@
             }
           }
         }
-      ]
+      ],
+      "certifications": [
+        {
+          "shorthandName": "CSCS",
+          "name": "Certified Strength and Conditioning Specialist"
+        },
+        {
+          "shorthandName": "CPT",
+          "name": "Current Procedural Terminology"
+        },
+        {
+          "shorthandName": "SFG",
+          "name": "Strong First Guidelines (Kettlebell specific)"
+        }
+      ],
+      "biography": {
+        "description": [
+          "Bill was born and raised in Tampa, FL and attended the University of South Florida where he graduated in 2016 with a B.S. in Sports Science. Bill was active in the USF community as well as in his fraternity, where he ran a personal fitness seminar on the weekends during his collegiate career.",
+          "Since graduation, Bill spent a few months in Austin, TX in which time he was introduced to Onnit Academy. This had a profound impact on Bill, introducing him to the world of kettlebell fitness and the benefits that come from this style of fitness training. Upon his return to Tampa, Bill has brought the same mentality and culture he found at Onnit with his new gym venture, Kettle POP."
+        ]
+      },
+      "social": {
+        "mediaHandles": {
+          "Instagram": "KettleBell Bill",
+          "Snapchat": "Kettle_Bill",
+          "Facebook": "Kettle POP"
+        }
+      }
+    }
+  },
+  {
+    "id": "003",
+    "trainer": {
+      "id": "003",
+      "name": "Kris Gethout",
+      "title": "Strength Training, Personal Trainer, NFPT Master Trainer",
+      "image": "/images/trainer-Kris.jpeg",
+      "certifications": [
+        {
+          "shorthandName": "NFPT MT",
+          "name": "National Federation of Professional Trainers Master Trainer"
+        },
+        {
+          "shorthandName": "NFPT NS",
+          "name": "National Federation of Professional Trainers Nutritional Specialist"
+        },
+        {
+          "shorthandName": "NFPT SS",
+          "name": "National Federation of Professional Trainers Strength Specialist"
+        },
+        {
+          "shorthandName": "SFG",
+          "name": "Strong First Guidelines (Kettlebell specific)"
+        },
+        {
+          "shorthandName": "CPT",
+          "name": "Current Procedural Terminology"
+        }
+      ],
+      "classes": [
+        {
+          "id": "003",
+          "title": "Kettlebell",
+          "dayOfWeek": "Wednesday",
+          "startTime": "7:30PM",
+          "endTime": "8:00PM",
+          "location": {
+            "id": "002",
+            "name": "Rockin' Fitness",
+            "address": {
+              "addressLine1": "55 Rock St.",
+              "addressLine2": "",
+              "city": "Tampa",
+              "state": "Florida",
+              "zip": "33601"
+            }
+          }
+        }
+      ],
+      "biography": {
+        "description": [
+          "Kris Gethout will push you beyond what you thought was failure. Why? We all think it has something to do with his barbaric bloodlust, though he insists it’s more to do with reaching and demolishing the goals you set.",
+          "Having an innate passion for fitness coupled with his personal purpose to help others achieve the goals they set helped Kris become a personal trainer in 2007. He has had the opportunity of training clients for general wellness as well as sport specific training including Football, Basketball, Hockey, Lacrosse, Triathlons, and Obstacle Races."
+        ]
+      },
+      "social": {
+        "mediaHandles": {
+          "Instagram": "Krisgethout",
+          "Snapchat": "Gethout-Fitness",
+          "Facebook": "Kris Gethout"
+        }
+      }
     }
   }
 ]

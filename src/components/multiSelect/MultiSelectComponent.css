@@ -1,0 +1,6 @@
+.multiSelect__errorArea {
+  color: red; }
+
+.multiSelect__itemsContainer {
+  display: flex;
+  flex-wrap: wrap; }

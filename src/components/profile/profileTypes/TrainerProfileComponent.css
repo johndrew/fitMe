@@ -3,20 +3,8 @@
     width: 70%;
     margin: 0px auto; } }
 
-.trainerProfile__trainerName span {
-  font-size: 24px !important; }
-  @media (min-width: 640px) {
-    .trainerProfile__trainerName span {
-      font-size: 36px !important; } }
-
 @media (min-width: 1024px) {
   .trainerProfile__infoContainer,
   .trainerProfile__classesContainer {
     width: 60%;
     margin: 0px auto; } }
-
-.trainerProfile__credentialItem {
-  font-size: 16px !important; }
-  @media (min-width: 640px) {
-    .trainerProfile__credentialItem {
-      font-size: 24px !important; } }
