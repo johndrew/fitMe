@@ -70,7 +70,6 @@ export default class SearchOptionsComponent extends React.Component {
             <p className="searchOptions__label searchOptions__label--trainingLength">
               Training Length:
             </p>
-            {/* TODO: training length */}
             <DropdownMenu
               className="searchOptions__option"
               value={this.state.trainingLengthValue}
@@ -83,7 +82,6 @@ export default class SearchOptionsComponent extends React.Component {
             <p className="searchOptions__label searchOptions__label--trainingType">
               Training Type:
             </p>
-            {/* TODO: training type */}
             <MultiSelect
               id="searchOptionsTrainingTypes"
               className="searchOptions__option"
@@ -93,7 +91,6 @@ export default class SearchOptionsComponent extends React.Component {
             <p className="searchOptions__label searchOptions__label--sessionType">
               Session Type:
             </p>
-            {/* TODO: session type */}
             <MultiSelect
               id="searchOptionsSessionTypes"
               className="searchOptions__option"

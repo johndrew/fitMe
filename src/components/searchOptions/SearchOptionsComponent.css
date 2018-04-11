@@ -11,4 +11,16 @@
     .searchOptions__trainingLengthContainer,
     .searchOptions__trainingTypeContainer,
     .searchOptions__sessionTypeContainer {
-      flex-direction: row; } }
+      flex-direction: row; }
+      .searchOptions__trainingLengthContainer .textbox__input,
+      .searchOptions__trainingTypeContainer .textbox__input,
+      .searchOptions__sessionTypeContainer .textbox__input {
+        font-size: 22px !important;
+        height: 25px !important; } }
+
+.searchOptions__label {
+  font-size: 16px; }
+  @media (min-width: 640px) {
+    .searchOptions__label {
+      font-size: 22px;
+      width: 100%; } }

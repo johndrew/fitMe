@@ -56,12 +56,12 @@ export default class SearchScreen extends React.Component {
       this.setState({
         showMapMarkers: true,
       });
-      this.props.history.push(`${Paths.SEARCH}?mapVisible=true&mapResultsVisible=true`);
+      this.props.history.replace(`${Paths.SEARCH}?mapVisible=true&mapResultsVisible=true`);
     } else {
       this.setState({
         searchResultsVisible: true,
       });
-      this.props.history.push(`${Paths.SEARCH}?searchResultsVisible=true`);
+      this.props.history.replace(`${Paths.SEARCH}?searchResultsVisible=true`);
     }
   }
 
@@ -70,7 +70,7 @@ export default class SearchScreen extends React.Component {
       showMap: true,
       searchResultsVisible: false,
     });
-    this.props.history.push(`${Paths.SEARCH}?mapVisible=true`);
+    this.props.history.replace(`${Paths.SEARCH}?mapVisible=true`);
   }
 
   handleSearchViewRequest() {
@@ -78,7 +78,7 @@ export default class SearchScreen extends React.Component {
       showMap: false,
       showMapMarkers: false,
     });
-    this.props.history.push(Paths.SEARCH);
+    this.props.history.replace(Paths.SEARCH);
   }
 
   render() {
