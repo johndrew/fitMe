@@ -1,6 +1,15 @@
+.multiSelect__container .textbox__input div {
+  text-align: center !important; }
+
 .multiSelect__errorArea {
   color: red; }
 
 .multiSelect__itemsContainer {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  flex-direction: column; }
+  .multiSelect__itemsContainer div {
+    margin: 0px auto !important; }
+  @media (min-width: 640px) {
+    .multiSelect__itemsContainer {
+      flex-direction: row; } }
