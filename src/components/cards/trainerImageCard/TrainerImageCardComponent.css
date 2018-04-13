@@ -6,3 +6,6 @@
 
 .trainerImageCard__trainerName span:nth-child(2) {
   font-size: 16px !important; }
+  @media (min-width: 640px) {
+    .trainerImageCard__trainerName span:nth-child(2) {
+      font-size: 24px !important; } }

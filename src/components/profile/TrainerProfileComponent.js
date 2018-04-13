@@ -2,9 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 
 import './TrainerProfileComponent.css';
-import InfoCard from '../../cards/trainerInfoCard/TrainerInfoCardComponent';
-import ImageCard from '../../cards/trainerImageCard/TrainerImageCardComponent';
-import ClassCard from '../../cards/classCard/ClassCardComponent';
+import InfoCard from '../cards/trainerInfoCard/TrainerInfoCardComponent';
+import ImageCard from '../cards/trainerImageCard/TrainerImageCardComponent';
+import ClassCard from '../cards/classCard/ClassCardComponent';
 
 export default class TrainerProfile extends React.Component {
   static extractData(data, id) {

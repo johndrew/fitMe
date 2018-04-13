@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, CardTitle, CardMedia } from 'material-ui/Card';
 
+import './TrainerImageCardComponent.css';
+
 export default class TrainerImageCardComponent extends React.Component {
   render() {
     return (

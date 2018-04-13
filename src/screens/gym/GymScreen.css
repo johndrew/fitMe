@@ -1,2 +1,17 @@
 .gymScreen__gymHeader {
-  text-align: center; }
+  text-align: center;
+  font-size: 24px; }
+  @media (min-width: 640px) {
+    .gymScreen__gymHeader {
+      font-size: 36px; } }
+
+@media (min-width: 1024px) {
+  .gymScreen__container {
+    width: 50%;
+    margin: 0px auto; } }
+
+.gymScreen__subHeader {
+  font-size: 20px; }
+  @media (min-width: 640px) {
+    .gymScreen__subHeader {
+      font-size: 30px; } }

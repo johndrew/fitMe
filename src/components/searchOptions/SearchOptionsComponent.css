@@ -23,4 +23,12 @@
   @media (min-width: 640px) {
     .searchOptions__label {
       font-size: 22px;
-      width: 100%; } }
+      width: 55%; } }
+
+@media (min-width: 640px) {
+  .searchOptions__option {
+    width: 50% !important; } }
+
+@media (min-width: 1024px) {
+  .searchOptions__option {
+    width: 40% !important; } }

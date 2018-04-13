@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
+import Divider from 'material-ui/Divider';
 import { Link } from 'react-router-dom';
 
 import './ClassCard.css';
@@ -15,6 +16,7 @@ export default class ClassCard extends React.Component {
           title={this.props.title}
           className="classCard__classTitle"
         />
+        <Divider />
         <CardText className="classCard__classTime">
           {this.props.dayOfWeek} from {this.props.startTime} to {this.props.endTime}
         </CardText>
@@ -25,8 +27,9 @@ export default class ClassCard extends React.Component {
           {address.addressLine1} {address.addressLine2}
           {address.city}, {address.state} {address.zip}
         </CardText>
-        <Link to={`/purchase/${this.props.id}`}>
-          <CardText>
+        <Divider />
+        <Link to="">
+          <CardText className="classCard__purchaseLink">
             Purchase Session
           </CardText>
         </Link>

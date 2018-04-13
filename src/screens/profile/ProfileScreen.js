@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Profile from '../../components/profile/ProfileComponent';
+import TrainerProfile from '../../components/profile/TrainerProfileComponent';
 
 // Temporary Resources
 import SallyUserSearchResults from '../../resources/sallyUserSearchResults.json';
@@ -13,10 +13,20 @@ export default class ProfileScreen extends React.Component {
     this.id = props.match.params.id;
   }
 
+  get profileComponent() {
+    switch(this.type) {
+      case 'trainer':
+        const data = TrainerProfile.extractData(SallyUserSearchResults, this.id);
+        return <TrainerProfile {...data} />
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
       <div className="profileScreen__container">
-        <Profile type={this.type} id={this.id} data={SallyUserSearchResults} />
+        {this.profileComponent}
       </div>
     );
   }

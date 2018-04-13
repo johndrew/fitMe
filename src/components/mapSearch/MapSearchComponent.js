@@ -28,7 +28,10 @@ export default class MapSearchComponent extends React.Component {
     // This would ideally point to a real gym id, but since a static map is used, this can point to
     // any gym. This one in particular points to Powerbell Fitness gym.
     const anyGym = '001';
-    const staticMap = <img src={this.getMapURl()} alt="The University of Tampa" />;
+    const imageSrc = this.props.addMarkers
+      ? '/images/staticmap-yesMarkers.png'
+      : '/images/staticmap-noMarkers.png';
+    const staticMap = <img src={imageSrc} alt="The University of Tampa" />;
 
     // TODO: Add tool tip when map click
     return (

@@ -1,2 +1,17 @@
+@import "../../utilities/variables"
+
 .gymScreen__gymHeader
   text-align: center
+  font-size: $title-small
+  @media (min-width: $medium)
+    font-size: $title-medium
+
+.gymScreen__container
+  @media (min-width: $large)
+    width: 50%
+    margin: 0px auto
+
+.gymScreen__subHeader
+  font-size: $subtitle-small
+  @media (min-width: $medium)
+    font-size: $subtitle-medium
