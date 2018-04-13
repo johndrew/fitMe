@@ -3,7 +3,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 
 import './TextboxComponent.css';
-import { MediaQueries, AppStyles } from '../../utilities/variables';
+import { AppStyles } from '../../utilities/variables';
 
 export default class Textbox extends React.Component {
   constructor(args) {

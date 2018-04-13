@@ -1,8 +1,28 @@
+@import "../../utilities/variables"
+  
 .searchOptions__trainingLengthContainer,
 .searchOptions__trainingTypeContainer,
 .searchOptions__sessionTypeContainer
   display: flex
   justify-content: center
+  flex-direction: column
   padding: 10px
-  width: 60%
+  width: 70%
   margin: 0 auto
+  @media (min-width: $medium)
+    flex-direction: row
+    .textbox__input
+      font-size: $text-small-medium !important
+      height: 25px !important
+
+.searchOptions__label
+  font-size: $text-small
+  @media (min-width: $medium)
+    font-size: $text-small-medium
+    width: 55%
+
+.searchOptions__option
+  @media (min-width: $medium)
+    width: 50% !important
+  @media (min-width: $large)
+    width: 40% !important

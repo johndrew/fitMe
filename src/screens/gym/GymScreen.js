@@ -56,11 +56,11 @@ export default class GymScreen extends React.Component {
           {this.gym.location.name}
         </h2>
         <div className="gymScreen__trainersContainer">
-          <h4>Trainers</h4>
+          <h4 className="gymScreen__subHeader">Trainers</h4>
           {this.trainers}
         </div>
         <div className="gymScreen__classesContainer">
-          <h4>Classes</h4>
+          <h4 className="gymScreen__subHeader">Classes</h4>
           {this.classes}
         </div>
       </div>

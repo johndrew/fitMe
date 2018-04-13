@@ -1,8 +1,17 @@
 @import "../../utilities/variables"
   
+.multiSelect__container
+  .textbox__input div
+    text-align: center !important
+
 .multiSelect__errorArea
   color: $fitMe-errorText
 
 .multiSelect__itemsContainer
   display: flex
   flex-wrap: wrap
+  flex-direction: column
+  div
+    margin: 0px auto !important
+  @media (min-width: $medium)
+    flex-direction: row

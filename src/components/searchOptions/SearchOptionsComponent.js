@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import DropdownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import Divider from 'material-ui/Divider';
 import _ from 'lodash';
 
 import './SearchOptionsComponent.css';
@@ -12,12 +13,23 @@ export default class SearchOptionsComponent extends React.Component {
   constructor(args) {
     super(args);
 
+    const trainingLengths = [
+      { value: '0.5', label: '30 minutes' },
+      { value: '1', label: '1 hour' },
+      { value: '1.5', label: '1 1/2 hour' },
+      { value: '2', label: '2 hours' },
+    ];
+
     this.state = {
       open: false,
+      trainingLengthValue: trainingLengths[0].value,
     };
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
+    this.handleTrainingLengthChange = this.handleTrainingLengthChange.bind(this);
+
+    this.trainingLengths = trainingLengths;
   }
 
   open() {
@@ -32,15 +44,14 @@ export default class SearchOptionsComponent extends React.Component {
     });
   }
 
-  get trainingLengthOptions() {
-    const validLengths = [
-      { value: '0.5', label: '30 minutes' },
-      { value: '1', label: '1 hour' },
-      { value: '1.5', label: '1 1/2 hour' },
-      { value: '2', label: '2 hours' },
-    ];
+  handleTrainingLengthChange(event, index, value) {
+    this.setState({
+      trainingLengthValue: value,
+    });
+  }
 
-    return _.map(validLengths, length =>
+  get trainingLengthOptions() {
+    return _.map(this.trainingLengths, length =>
       <MenuItem
         key={length.value}
         value={length.value}
@@ -59,8 +70,11 @@ export default class SearchOptionsComponent extends React.Component {
             <p className="searchOptions__label searchOptions__label--trainingLength">
               Training Length:
             </p>
-            {/* TODO: training length */}
-            <DropdownMenu>
+            <DropdownMenu
+              className="searchOptions__option"
+              value={this.state.trainingLengthValue}
+              onChange={this.handleTrainingLengthChange}
+            >
               {trainingLengthItems}
             </DropdownMenu>
           </div>
@@ -68,16 +82,21 @@ export default class SearchOptionsComponent extends React.Component {
             <p className="searchOptions__label searchOptions__label--trainingType">
               Training Type:
             </p>
-            {/* TODO: training type */}
-            <MultiSelect id="searchOptionsTrainingTypes" />
+            <MultiSelect
+              id="searchOptionsTrainingTypes"
+              className="searchOptions__option"
+            />
           </div>
           <div className="searchOptions__sessionTypeContainer">
             <p className="searchOptions__label searchOptions__label--sessionType">
               Session Type:
             </p>
-            {/* TODO: session type */}
-            <MultiSelect id="searchOptionsSessionTypes" />
+            <MultiSelect
+              id="searchOptionsSessionTypes"
+              className="searchOptions__option"
+            />
           </div>
+          <Divider />
           <Button
             label="Close"
             type="flat"
